@@ -1,21 +1,32 @@
 
-/* ------- color set -----------*/
-$primary-background: #464C51;
-$seconday-background: #30343855;
+// imported Inter Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 
-$primary-button: #00000035;
-$seconday-button: #D1D4DE;
+// ------- color set -----------//
+:root {
 
-$primary-text: white;
-$seconday-text: #373C40;
+  --primary-background: #464C51;
+  --secondary-background: rgba(48, 52, 56, 0.55);
+  
+  --primary-button: rgba(0, 0, 0, 0.35);
+  --secondary-button: #D1D4DE;
+  
+  --primary-text: white;
+  --secondary-text: rgba(55, 60, 64, 1)
+  ;
+}
 
 
-/* -------------------------- */
+
+// -------------------------- //
 
 
 
 
 .App {
-  background-color: $primary-background;
+  background-color: var(--primary-background);
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
 
