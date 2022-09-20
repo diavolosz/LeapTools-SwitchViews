@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5vw;
+    margin-right: 2.5vw;
 
     .icon {
       width: 5vw;
@@ -30,4 +30,63 @@
 
 .view-list-container::-webkit-scrollbar {
   display: none;
+}
+
+.imageZoom {
+  animation: SPL-remove 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.imageZoomOut {
+  animation: SPL-restore 0.5s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+@keyframes SPL-remove {
+  0% {scroll-padding-left:10vw;}
+  5% {scroll-padding-left:9.5vw;}
+  10% {scroll-padding-left:9vw;}
+  15% {scroll-padding-left:8.5vw;}
+  20% {scroll-padding-left:8vw;}
+  25% {scroll-padding-left:7.5vw;}
+  30% {scroll-padding-left:7vw;}
+  35% {scroll-padding-left:6.5vw;}
+  40% {scroll-padding-left:6vw;}
+  45% {scroll-padding-left:5.5vw;}
+  50% {scroll-padding-left:5vw;}
+  55% {scroll-padding-left:4.5vw;}
+  60% {scroll-padding-left:4vw;}
+  65% {scroll-padding-left:3.5vw;}
+  70% {scroll-padding-left:3vw;}
+  75% {scroll-padding-left:2.5vw;}
+  80% {scroll-padding-left:2vw;}
+  85% {scroll-padding-left:1.5vw;}
+  90% {scroll-padding-left:1vw;}
+  95% {scroll-padding-left:1.5vw;}
+  100% {scroll-padding-left:0vw;}
+}
+
+@keyframes SPL-restore {
+  0% {scroll-padding-left:10vw;}
+  5% {scroll-padding-left:9.5vw;}
+  10% {scroll-padding-left:9vw;}
+  15% {scroll-padding-left:8.5vw;}
+  20% {scroll-padding-left:8vw;}
+  25% {scroll-padding-left:7.5vw;}
+  30% {scroll-padding-left:7vw;}
+  35% {scroll-padding-left:6.5vw;}
+  40% {scroll-padding-left:6vw;}
+  45% {scroll-padding-left:5.5vw;}
+  50% {scroll-padding-left:5vw;}
+  55% {scroll-padding-left:4.5vw;}
+  60% {scroll-padding-left:4vw;}
+  65% {scroll-padding-left:3.5vw;}
+  70% {scroll-padding-left:3vw;}
+  75% {scroll-padding-left:2.5vw;}
+  80% {scroll-padding-left:2vw;}
+  85% {scroll-padding-left:1.5vw;}
+  90% {scroll-padding-left:1vw;}
+  95% {scroll-padding-left:0.5vw;}
+  100% {scroll-padding-left:0vw;}
 }

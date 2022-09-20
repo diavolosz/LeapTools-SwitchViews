@@ -5,10 +5,10 @@ import { ShareNetwork, Heart, Copy } from "phosphor-react"
 
 export default function ViewListBotNav(props) {
 
-  const { location, floorType, wallType } = props
+  const { location, floorType, wallType, botNavStatus } = props
 
   return (
-    <nav className='bottom-nav-container'>
+    <nav className={`bottom-nav-container ${botNavStatus}`}>
       <section className='img-info-wrapper'>
         <div className='img-location'>
           {location}

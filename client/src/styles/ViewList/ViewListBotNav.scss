@@ -1,10 +1,15 @@
 .bottom-nav-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 85%;
   height: 10%;
   color: var(--primary-text);
+
+  top: 0px;
+  animation: slideUp 0.5s;
+  animation-fill-mode: forwards;
 
   .img-info-wrapper {
 
@@ -71,5 +76,32 @@
         font-size: large;
       }
     }
+  }
+}
+
+.hideNav {
+  position: relative;
+  animation: slideDown 1s;
+  animation-fill-mode: forwards;
+}
+
+
+// local animation
+
+@keyframes slideDown {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 10vh;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 10vh;
+  }
+  to {
+    top: 0px;
   }
 }

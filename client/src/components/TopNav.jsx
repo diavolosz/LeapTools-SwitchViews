@@ -4,28 +4,41 @@ import { SignIn, HouseSimple, Pause, ShareNetwork, Check } from "phosphor-react"
 
 export default function TopNav(props) {
 
-  const { } = props
+  const { handleImageFocus, focus } = props
+
+  const handleLog = () => {
+    console.log('clicked')
+  }
 
   return (
     <section className="top-nav-container">
 
       <div className="top-nav-button-container">
+
         <div className="top-nav-button">
-          <SignIn className='icon'/>
+          <SignIn className='icon' />
           EXIT
         </div>
+
         <div className="top-nav-button">
-          <HouseSimple className='icon'/>
+          <HouseSimple className='icon' />
           CHANGE ROOM
         </div>
-        <div className="top-nav-button">
-          <Pause className='icon'/>
+
+        <div className="top-nav-button"
+          onClick={() => {
+            handleImageFocus(focus)
+            handleLog()
+          }}>
+          <Pause className='icon' />
           VIEWS
         </div>
+
         <div className="top-nav-button">
-          <ShareNetwork className='icon'/>
+          <ShareNetwork className='icon' />
           SHARE
         </div>
+
       </div>
 
       {/* <div className="top-nav-button-container">

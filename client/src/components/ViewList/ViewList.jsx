@@ -48,9 +48,10 @@ const imageData = [
 
 export default function ViewList(props) {
 
+  const { botNavStatus, imageZoom } = props
+
   const viewListDisplay = imageData.map((imageInfo, index) => {
     const { image, location, floorType, wallType } = imageInfo
-
     return (
       <ViewListItem
         key={index}
@@ -58,12 +59,14 @@ export default function ViewList(props) {
         location={location}
         floorType={floorType}
         wallType={wallType}
+        botNavStatus={botNavStatus}
+        imageZoom={imageZoom}
       />
     )
   })
 
   return (
-    <section className="view-list-container">
+    <section className={`view-list-container ${imageZoom}`} >
 
       {viewListDisplay}
       <div className='add-view-button'>
