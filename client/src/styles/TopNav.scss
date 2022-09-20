@@ -1,50 +1,29 @@
-.bottom-nav-container {
+
+.top-nav-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 85%;
-  height: 10%;
-  color: var(--primary-text);
+  justify-content: center;
+  height: 10vh;
+  
 
-  .img-info-wrapper {
-
-    .img-location {
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 20px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .img-details-wrapper {
-      display: flex;
-
-
-      .img-details {
-        margin-right: 3.5em;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 20px;
-      }
-    }
-  }
-
-  .utility-button-wrapper {
+  .top-nav-button-container {
     display: flex;
-    
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5em;
+    gap: 0.5em;
+    border-radius: 0 0 12px 12px;
+    background-color: var(--secondary-background);
 
-    .utility-button {
+
+    .top-nav-button {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       position: relative;
-      top: 0px;
 
       width: fit-content;
       height: 40px;
       padding: 0 1.5em;
-      margin: 0 0.5em;
       color: var(--primary-text);
       background-color: var(--primary-button);
       border-radius: 12px;
@@ -54,14 +33,13 @@
       line-height: 20px;
       text-align: center;
       letter-spacing: 0.5px;
-      
+
       transition: 0.25s;
 
       &:hover {
         position: relative;
         background-color: var(--secondary-button);
         color: var(--secondary-text);
-        top: -3px;
         transition: 0.25s;
         cursor: pointer;
       }

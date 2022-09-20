@@ -1,0 +1,33 @@
+
+
+.view-list-container {
+  width: auto;
+  display: flex;
+  scroll-padding-left: 10vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  .add-view-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5vw;
+
+    .icon {
+      width: 5vw;
+      color: rgba(129, 140, 152, 1);
+      transition: 0.5s;
+
+      &:hover {
+        scale: 1.5;
+        color: rgb(162, 168, 175);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.view-list-container::-webkit-scrollbar {
+  display: none;
+}
