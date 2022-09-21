@@ -8,25 +8,33 @@ import ViewList from './components/ViewList/ViewList';
 
 function App() {
 
-  const [focus, setFocus] = useState(true)
+  const [focus, setFocus] = useState(false)
 
   const [imageZoom, setImageZoom] = useState('imageZoomOut')
   const [botNavStatus, setBotNavStatus] = useState('showNav')
+
+  const [currentItemIndex, setCurrentItemIndex] = useState(0)
+
+
+
 
   const handleImageFocus = (focusStatus) => {
     if (focusStatus === true) {
       setFocus(false)
       setImageZoom('imageZoom')
       setBotNavStatus('hideNav')
-      console.log('imageZoom is', imageZoom)
     }
+  }
+
+  const handleImageDefault = (focusStatus) => {
     if (focusStatus === false) {
       setFocus(true)
       setImageZoom('imageZoomOut')
       setBotNavStatus('showNav')
-      console.log('imageZoom is', imageZoom)
     }
   }
+
+
 
 
   return (
@@ -34,12 +42,16 @@ function App() {
 
       <TopNav
         handleImageFocus={handleImageFocus}
+        handleImageDefault={handleImageDefault}
         focus={focus}
         botNavStatus={botNavStatus}
       />
       <ViewList
+        focus={focus}
         botNavStatus={botNavStatus}
         imageZoom={imageZoom}
+        setCurrentItemIndex={setCurrentItemIndex}
+        currentItemIndex={currentItemIndex}
       />
 
     </div>

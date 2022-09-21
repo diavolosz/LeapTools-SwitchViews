@@ -3,6 +3,7 @@ import '../../styles/ViewList/ViewList.scss'
 import { Plus } from "phosphor-react"
 
 import ViewListItem from "./ViewListItem"
+import { useState } from 'react'
 
 const imageData = [
   {
@@ -48,25 +49,31 @@ const imageData = [
 
 export default function ViewList(props) {
 
-  const { botNavStatus, imageZoom } = props
+  const { focus, botNavStatus, imageZoom, currentItemIndex, setCurrentItemIndex } = props
+
+
 
   const viewListDisplay = imageData.map((imageInfo, index) => {
     const { image, location, floorType, wallType } = imageInfo
     return (
       <ViewListItem
+        focus={focus}
         key={index}
+        index={index}
         image={image}
         location={location}
         floorType={floorType}
         wallType={wallType}
         botNavStatus={botNavStatus}
         imageZoom={imageZoom}
+        setCurrentItemIndex={setCurrentItemIndex}
+        currentItemIndex={currentItemIndex}
       />
     )
   })
 
   return (
-    <section className={`view-list-container ${imageZoom}`} >
+    <section id='scroll-target' className={`view-list-container`} >
 
       {viewListDisplay}
       <div className='add-view-button'>

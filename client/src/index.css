@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #464C51;
 }
 
 body::-webkit-scrollbar {

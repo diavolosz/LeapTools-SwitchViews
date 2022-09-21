@@ -14,32 +14,11 @@
   overflow-y: hidden;
   scroll-snap-align: start;
 
-  transition: 1s;
+  transition: 0.75s;
 
   &:first-child {
     margin-left: 10vw;
   }
-
-
-
-  // &:hover {
-  //   top: 0px;
-  //   border-radius: 0px;
-  //   height: 100vh;
-  //   width: 100vw;
-  //   transition: 1s;
-  //   margin: 0px;
-  //   transition: 1s;
-  // }
-  // &:hover .view-img-container {
-  //   height: 100%;
-  //   transition: 1s;
-  // } 
-  // &:hover .view-img-container img {
-  //   border-radius: 0px;
-  //   transition: 2s;
-  // }
-
 
   .view-img-container {
     display: flex;
@@ -48,27 +27,15 @@
     height: 90%;
     width: 100%;
 
-    transition: 1s;
+    transition: 0.75s;
 
     img {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit:cover;
       border-radius: 24px;
 
-      transition: 1s;
-
-      // animation: imageZoomOut 1s;
-      // animation-fill-mode: forwards;
-
-      // &:hover {
-      //   margin: none;
-      //   top: 0px;
-      //   border-radius: 0px;
-      //   height: 100vh;
-      //   width: 100vw;
-      //   transition: 1s;
-      // }
+      transition: 0.75s;
     }
   }
 }
@@ -76,29 +43,50 @@
 .imageZoom {
   position: relative;
   top: 0px;
+  left: -7.5vw;
   border-radius: 0px;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
-  transition: 1s;
   margin: 0px;
-  
-  transition: 1.25s;
+
+  transition: 1s;
   
   &:first-child {
-    margin-left: 0px
+    margin-left: 0px;
+    left: 0vw;
   }
 
   .view-img-container {
     height: 100%;
-    transition: 1.25s;
+    transition: 1s;
 
     img {
       border-radius: 0px;
-      transition: 2s;
+      transition: 1s;
     }
   }
 }
 
+// push previous child element to the left to create spreading effect 
+.child-offset {
+  left: -10vw;
+}
+
+//style to identify target 
+.image-out-focus {
+  .view-img-container {
+    img {
+      filter: grayscale(1.2) blur(3px);
+      scale: 0.94;
+      transition: 0.75s;
+    
+      &:hover {
+        scale: 1;
+        cursor: pointer;
+      }
+    }
+  }
+}
 
 
 // local animation 

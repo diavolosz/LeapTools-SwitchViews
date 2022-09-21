@@ -1,5 +1,5 @@
 .top-nav-container {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -8,9 +8,9 @@
   justify-content: center;
   height: 10vh;
 
-
-
+  
   .top-nav-button-container {
+    position: relative;
     display: flex;
     height: fit-content;
     width: fit-content;
@@ -18,6 +18,8 @@
     gap: 0.5em;
     border-radius: 0 0 12px 12px;
     background-color: var(--secondary-background);
+    
+    animation: TopNavSlideDown 1s;
 
 
     .top-nav-button {
@@ -54,5 +56,16 @@
         font-size: large;
       }
     }
+  }
+}
+
+//local animation 
+
+@keyframes TopNavSlideDown {
+  from {
+    top: -10vh;
+  }
+  to {
+    top: 0vh;
   }
 }
