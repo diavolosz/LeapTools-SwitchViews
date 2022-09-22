@@ -26,7 +26,7 @@ export default function TopNav(props) {
         setData(dataUpdateOnDelete)
         setCurrentItemIndex(currentItemIndex)
       }
-      setTimeout(scrollLeftOnUpdate, 600)
+      setTimeout(scrollLeftOnUpdate, 800)
 
     } else {
       let elem = document.getElementById("scroll-target")
@@ -38,7 +38,7 @@ export default function TopNav(props) {
         setData(dataUpdateOnDelete)
         setCurrentItemIndex(currentItemIndex - 1)
       }
-      setTimeout(scrollLeftOnUpdate, 600)
+      setTimeout(scrollLeftOnUpdate, 800)
     }
 
 
