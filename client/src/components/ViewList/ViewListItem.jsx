@@ -19,17 +19,15 @@ export default function ViewListItem(props) {
     setCurrentItemIndex,
     currentItemIndex } = props
 
+  //scroll left or right on item click 
   const handleScroll = (clickedItemIndex) => {
     let elem = document.getElementById("scroll-target")
     if (clickedItemIndex > currentItemIndex) {
       elem.scrollBy({left: (window.innerWidth*0.85), behavior: 'smooth'})
-      // console.log('scroll right')
     }
     if (clickedItemIndex < currentItemIndex) {
       elem.scrollBy({left: (-window.innerWidth*0.85), behavior: 'smooth'})
-      // console.log('scroll left')
     }
-    // console.log(clickedItemIndex)
   }
 
 
@@ -37,7 +35,7 @@ export default function ViewListItem(props) {
   useEffect(() => {
     let target = document.getElementsByClassName("view-list-item-container")
     let currentImage = target[currentItemIndex]
-     
+    console.log('activated')
     let previousChild
     if (currentItemIndex - 1 < 0) {
       previousChild = target[0]
@@ -46,16 +44,14 @@ export default function ViewListItem(props) {
     }
     
     if (focus === true) {
-      // console.log('Zoom Out')
       currentImage.classList.remove("imageZoom");
       previousChild.classList.remove("child-offset")
     } 
     if (focus === false) {
-      // console.log('Zoom In')
       currentImage.classList.add("imageZoom");
       previousChild.classList.add("child-offset")
     }
-  }, [focus, currentItemIndex])
+  }, [focus])
 
 
   //apply greyscale and blur to non-focused item 
@@ -70,9 +66,9 @@ export default function ViewListItem(props) {
         target[x].classList.add("image-out-focus");
       }
     }
-
   }, [currentItemIndex])
 
+  
   return (
     <section className={`view-list-item-container`}>
       <div className="view-img-container"
