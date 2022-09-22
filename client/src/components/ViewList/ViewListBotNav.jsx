@@ -14,7 +14,6 @@ export default function ViewListBotNav(props) {
     botNavStatus,
     data,
     setData,
-    currentItemIndex,
     setCurrentItemIndex,
   } = props
 

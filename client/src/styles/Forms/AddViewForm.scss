@@ -31,8 +31,13 @@
 
 
       .icon {
+        rotate: 25deg;
         width: 10%;
         margin: 1em 2.5% 0 87.5%;
+
+        &:hover {
+          rotate: 0deg;
+        }
       }
 
       .form-submit {
@@ -112,11 +117,14 @@
 }
 
 @keyframes formDisplay {
-  from {
+  0% {
     left: 50vw;
-    scale: 0;
+    scale: 0.01;
   }
-  to {
+  20% {
+    scale: 0.05;
+  }
+  100% {
     left: 0px;
     scale: 1;
   }

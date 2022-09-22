@@ -3,14 +3,11 @@ import '../../styles/Forms/AddViewForm.scss'
 
 import { useControlledForm } from '../../hooks/useControlledForm'
 import { ArrowArcLeft } from 'phosphor-react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 
 export default function AddViewForm(props) {
 
   const {
     resetForm,
-    data,
     setData,
     currentItemIndex,
     setCurrentItemIndex } = props
