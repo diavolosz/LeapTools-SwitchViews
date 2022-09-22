@@ -19,31 +19,32 @@ const imageData = [
     floorType: 'Earl grey carpet',
     wallType: 'Light grey'
   },
+  {
+    image: 'img/v3.jpg',
+    location: 'main living room',
+    floorType: 'Oak wood with carpet',
+    wallType: 'Grey white'
+  },
 ]
-  // {
-  //   image: 'img/v3.jpg',
-  //   location: 'living room',
-  //   floorType: 'Dark forest hardwood',
-  //   wallType: 'Pearl while'
-  // },
-  // {
-  //   image: 'img/v4.jpg',
-  //   location: 'living room',
-  //   floorType: 'Dark forest hardwood',
-  //   wallType: 'Pearl while'
-  // },
-  // {
-  //   image: 'img/v1.jpg',
-  //   location: 'living room',
-  //   floorType: 'Dark forest hardwood',
-  //   wallType: 'Pearl while'
-  // },
-  // {
-  //   image: 'img/v2.jpg',
-  //   location: 'bedroom',
-  //   floorType: 'Earl grey carpet',
-  //   wallType: 'Light grey'
-  // },
+
+// {
+//   image: 'img/v4.jpg',
+//   location: 'living room',
+//   floorType: 'Dark forest hardwood',
+//   wallType: 'Pearl while'
+// },
+// {
+//   image: 'img/v1.jpg',
+//   location: 'living room',
+//   floorType: 'Dark forest hardwood',
+//   wallType: 'Pearl while'
+// },
+// {
+//   image: 'img/v2.jpg',
+//   location: 'bedroom',
+//   floorType: 'Earl grey carpet',
+//   wallType: 'Light grey'
+// },
 
 
 
@@ -51,9 +52,9 @@ export default function ViewList(props) {
 
   const { focus, botNavStatus, imageZoom, currentItemIndex, setCurrentItemIndex } = props
 
-  const [ form, setForm ] = useState(false)
+  const [form, setForm] = useState(false)
 
-  const [ data, setData ] = useState([])
+  const [data, setData] = useState([])
 
 
   useEffect(() => {
@@ -75,6 +76,7 @@ export default function ViewList(props) {
         imageZoom={imageZoom}
         setCurrentItemIndex={setCurrentItemIndex}
         currentItemIndex={currentItemIndex}
+        setData={setData}
       />
     )
   })
@@ -89,6 +91,8 @@ export default function ViewList(props) {
         setForm={setForm}
         data={data}
         setData={setData}
+        setCurrentItemIndex={setCurrentItemIndex}
+        currentItemIndex={currentItemIndex}
       />
 
     </section>

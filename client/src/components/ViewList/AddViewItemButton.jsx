@@ -7,7 +7,9 @@ import AddViewForm from "../Forms/AddViewForm"
 
 export default function AddViewItemButton(props) {
 
-  const { form, setForm, data, setData } = props
+  const { form, setForm, data, setData, currentItemIndex, setCurrentItemIndex } = props
+
+
 
   const handleForm = () => {
     setForm(true)
@@ -26,6 +28,8 @@ export default function AddViewItemButton(props) {
           data={data}
           setData={setData}
           resetForm={resetForm}
+          setCurrentItemIndex={setCurrentItemIndex}
+          currentItemIndex={currentItemIndex}
         />
       }
     </div>

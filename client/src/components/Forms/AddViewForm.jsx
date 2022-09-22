@@ -3,10 +3,17 @@ import '../../styles/Forms/AddViewForm.scss'
 
 import { useControlledForm } from '../../hooks/useControlledForm'
 import { ArrowArcLeft } from 'phosphor-react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function AddViewForm(props) {
 
-  const { resetForm, data, setData } = props
+  const {
+    resetForm,
+    data,
+    setData,
+    currentItemIndex,
+    setCurrentItemIndex } = props
 
   const [formValues, parsedFormData, handleInput, errors] = useControlledForm([
     {
@@ -52,15 +59,25 @@ export default function AddViewForm(props) {
 
   const onSubmit = event => {
     event.preventDefault();
-    console.log(formValues)
-    console.log([... {
-      image: formValues[0].value,
-      location: formValues[1].value,
-      floorType: formValues[2].value,
-      wallType: formValues[3].value,
-    }])
+    setData(prev => (
+      [...prev, {
+        image: formValues[0].value,
+        location: formValues[1].value,
+        floorType: formValues[2].value,
+        wallType: formValues[3].value,
+      }]
+    ))
+
+    const scrollRightOnUpdate = () => {
+      setCurrentItemIndex(currentItemIndex + 1)
+      let elem = document.getElementById("scroll-target")
+      elem.scrollBy({ left: (window.innerWidth * 0.85), behavior: 'smooth' })
+    }
+    setTimeout(scrollRightOnUpdate, 700)
+    
     resetForm()
   };
+
 
   return (
     <section className='add-view-form-container'>

@@ -1,11 +1,36 @@
-import '../../styles/ViewList/ViewListBotNav.scss' 
+import '../../styles/ViewList/ViewListBotNav.scss'
 
 import { ShareNetwork, Heart, Copy } from "phosphor-react"
 
 
 export default function ViewListBotNav(props) {
 
-  const { location, floorType, wallType, botNavStatus } = props
+  const {
+    index,
+    image,
+    location,
+    floorType,
+    wallType,
+    botNavStatus,
+    setData,
+    currentItemIndex,
+    setCurrentItemIndex,
+  } = props
+
+
+  const handleDuplication = (index) => {
+    console.log(index)
+
+    setData(prev => (
+      [...prev, {
+        image: image,
+        location: location,
+        floorType: floorType,
+        wallType: wallType,
+      }]
+    ))
+  }
+
 
   return (
     <nav className={`bottom-nav-container ${botNavStatus}`}>
@@ -25,15 +50,15 @@ export default function ViewListBotNav(props) {
 
       <section className='utility-button-wrapper'>
         <div className='utility-button'>
-          <ShareNetwork className='icon'/>
+          <ShareNetwork className='icon' />
           <span>SHARE</span>
         </div>
         <div className='utility-button'>
-          <Heart className='icon'/>
+          <Heart className='icon' />
           <span>FAVORITE</span>
         </div>
-        <div className='utility-button'>
-          <Copy className='icon'/>
+        <div className='utility-button' onClick={() => handleDuplication(index)}>
+          <Copy className='icon' />
           <span>DUPLICATE</span>
         </div>
 
