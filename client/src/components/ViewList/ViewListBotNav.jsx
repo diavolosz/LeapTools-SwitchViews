@@ -18,9 +18,8 @@ export default function ViewListBotNav(props) {
     setCurrentItemIndex,
   } = props
 
-
+  //when item is duplicated, its placed as the last item. user will automatically scroll to the last item
   const handleDuplication = (index) => {
-    console.log(index)
 
     setData(prev => (
       [...prev, {
@@ -34,9 +33,9 @@ export default function ViewListBotNav(props) {
     const scrollRightOnUpdate = () => {
       setCurrentItemIndex(data.length)
       let elem = document.getElementById("scroll-target")
-      elem.scrollBy({ left: (window.innerWidth * 99), behavior: 'smooth' })
+      elem.scrollBy({ left: (window.innerWidth * 999), behavior: 'smooth' })
     }
-    setTimeout(scrollRightOnUpdate, 400)
+    setTimeout(scrollRightOnUpdate, 200)
   }
 
 

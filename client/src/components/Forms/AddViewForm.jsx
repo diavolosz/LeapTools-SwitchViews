@@ -56,7 +56,7 @@ export default function AddViewForm(props) {
     );
   });
 
-
+  // submit will update current data set and automatically scroll to new item 
   const onSubmit = event => {
     event.preventDefault();
     setData(prev => (

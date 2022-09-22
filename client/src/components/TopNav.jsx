@@ -1,18 +1,13 @@
 import '../styles/TopNav.scss'
 
-import { SignIn, HouseSimple, Pause, ShareNetwork, Check } from "phosphor-react"
+import { SignIn, HouseSimple, Pause, ShareNetwork, Check, Trash } from "phosphor-react"
 
 export default function TopNav(props) {
 
   const { handleImageFocus, handleImageDefault, focus, currentItemIndex } = props
 
-  const handleLog = () => {
-    console.log('clicked')
-  }
-
   return (
     <section className="top-nav-container">
-
 
       {!focus &&
         <div className="top-nav-button-container">
@@ -43,6 +38,10 @@ export default function TopNav(props) {
 
       {focus &&
         <div className="top-nav-button-container">
+          <div className="top-nav-button">
+            <Trash className='icon' />
+            DELETE
+          </div>
           <div className="top-nav-button"
             onClick={() => {
               handleImageFocus(focus)
