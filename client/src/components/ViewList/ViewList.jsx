@@ -76,6 +76,7 @@ export default function ViewList(props) {
         imageZoom={imageZoom}
         setCurrentItemIndex={setCurrentItemIndex}
         currentItemIndex={currentItemIndex}
+        data={data}
         setData={setData}
       />
     )

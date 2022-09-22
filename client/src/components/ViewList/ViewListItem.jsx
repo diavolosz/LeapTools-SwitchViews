@@ -16,6 +16,7 @@ export default function ViewListItem(props) {
     floorType,
     wallType,
     botNavStatus,
+    data,
     setData,
     setCurrentItemIndex,
     currentItemIndex } = props
@@ -90,6 +91,7 @@ export default function ViewListItem(props) {
         botNavStatus={botNavStatus}
         setCurrentItemIndex={setCurrentItemIndex}
         currentItemIndex={currentItemIndex}
+        data={data}
         setData={setData}
         index={index}
       />

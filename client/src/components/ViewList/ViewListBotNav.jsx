@@ -12,6 +12,7 @@ export default function ViewListBotNav(props) {
     floorType,
     wallType,
     botNavStatus,
+    data,
     setData,
     currentItemIndex,
     setCurrentItemIndex,
@@ -29,6 +30,13 @@ export default function ViewListBotNav(props) {
         wallType: wallType,
       }]
     ))
+
+    const scrollRightOnUpdate = () => {
+      setCurrentItemIndex(data.length)
+      let elem = document.getElementById("scroll-target")
+      elem.scrollBy({ left: (window.innerWidth * 99), behavior: 'smooth' })
+    }
+    setTimeout(scrollRightOnUpdate, 400)
   }
 
 

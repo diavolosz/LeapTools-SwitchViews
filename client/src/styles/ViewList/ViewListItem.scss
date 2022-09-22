@@ -14,6 +14,7 @@
   overflow-y: hidden;
   scroll-snap-align: start;
 
+  animation: imagePopUp 0.5s;
   transition: 0.75s;
 
   &:first-child {
@@ -85,5 +86,17 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+
+// local animation 
+
+@keyframes imagePopUp {
+  from {
+    scale: 0.8;
+  }
+  to {
+    scale: 1;
   }
 }
